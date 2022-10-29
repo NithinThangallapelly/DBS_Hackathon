@@ -1,0 +1,100 @@
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Forgot Form</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <link rel="stylesheet" href="forgotpwdcss.css" />
+  </head>
+<script>
+function validation()
+{
+
+var password=document.getElementById("password").value;
+var repassword=document.getElementById("repassword").value;
+var email=document.getElementById("email").value;
+if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
+  {
+    alert("enter properly");
+    return false;
+  }
+if(password==""||password==null||password==undefined)
+{
+alert("enter field"); password.focus();
+return false;
+}
+if(repassword==""||repassword==null||repassword==undefined)
+{
+alert("enter field"); repassword.focus();
+return false;
+}
+
+if(password.length<6)
+{
+alert("password must have atleast 6");
+password.focus();
+return false;
+}
+if(repassword.length<6)
+{
+alert("password must have atleast 6");
+repassword.focus();
+return false;
+}
+
+if(password!=repassword)
+{
+alert("password is not matched")
+password.focus();
+repassword.focus();
+return false;
+}
+ 
+return true;
+}
+</script>
+
+  <body background="C:\Users\Admin\Desktop\dbs hack\flight2.jpg">
+    <div class="container">
+      <h1 class="form-title">Forgot Password</h1>
+      <form name="RegForm"action="" method="post" onsubmit="return validation()" id="form">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email"/>
+          </div>
+          <span id="emailerror"></span>
+          <div class="user-input-box">
+            <label for="newPassword">New Password</label>
+            <input type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your new Password"/>
+          </div>
+              <span id="newpassworderror"></span>
+          <div class="user-input-box">
+            <label for="repassword">Confirm Password</label>
+            <input type="password"
+                    id="repassword"
+                    name="repassword"
+                    placeholder="Enter Confirm your Password"/>
+          </div>
+          <span id="confpassworderror"></span>
+
+          
+
+        </div>
+<p style="color:white"><b> Don't have an Account <a href="registration.html" style="color:yellow">Register</a>
+          </b>
+      </p>
+        <div class="form-submit-btn">
+          <input type="submit" name="submit" value="SUBMIT" formaction="log.html">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

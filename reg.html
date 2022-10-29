@@ -1,0 +1,205 @@
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <link rel="stylesheet" href="regcss.css" />
+  </head>
+<script type="text/javascript">
+function validation()
+{
+
+var phone=document.getElementById("phone").value;
+var fname=document.getElementById("fname").value;
+var lname=document.getElementById("lname").value;
+var uname=document.getElementById("uname").value;
+var answer=document.getElementById("answer").value;
+var password=document.getElementById("password").value;
+var repassword=document.getElementById("repassword").value;
+var email=document.getElementById("email").value;
+if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
+  {
+    alert("enter properly");
+    return false;
+  }
+if(fname==""||fname==undefined||fname==null)
+{
+alert("enter first name");
+fname.focus();
+return false;
+}
+
+if(lname==""||lname==undefined||lname==null)
+{
+alert("enter last name");
+lname.focus();
+return false;
+}
+
+if(uname==""||uname==undefined||uname==null)
+{
+alert("enter username");
+uname.focus();
+return false;
+}
+if(answer==""||answer==undefined||answer==null)
+{
+alert("enter security answer");
+answer.focus();
+return false;
+}
+if(phone==""||phone==null||phone==undefined)
+{
+alert("enter field"); phone.focus();
+return false;
+}
+if(password==""||password==null||password==undefined)
+{
+alert("enter field"); password.focus();
+return false;
+}
+if(repassword==""||repassword==null||repassword==undefined)
+{
+alert("enter field"); repassword.focus();
+return false;
+}
+
+if(password.length<6)
+{
+alert("password must have atleast 6");
+password.focus();
+return false;
+}
+if(repassword.length<6)
+{
+alert("password must have atleast 6");
+repassword.focus();
+return false;
+}
+
+if(password!=repassword)
+{
+alert("password is not matched")
+password.focus();
+repassword.focus();
+return false;
+}
+
+return true; 
+
+}
+</script>
+
+  <body background="C:\Users\Admin\Desktop\dbs hack\flight.jpg">
+    <div class="container">
+      <h1 class="form-title">Registration</h1>
+      <form name="RegForm" action="" method="POST" onsubmit="return validation()" id="form">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="firstName">First Name</label>
+            <input type="text"
+                    id="fname"
+                    name="fname"
+                    placeholder="Enter First Name">
+            
+          </div>
+             <span id="fname_error"></span>
+          <div class="user-input-box">
+            <label for="lastName">Last Name</label>
+            <input type="text"
+                    id="lname"
+                    name="lname"
+                    placeholder="Enter Last Name">
+            
+          </div><span id="lname_error"></span>
+          <div class="user-input-box">
+            <label for="username">Username<label>
+            <input type="text"
+                    id="uname"
+                    name="uname"
+                    placeholder="Enter Username">
+           
+          </div> <span id="uname_error"></span>
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email">
+            
+          </div><span id="email_error"></span>
+          
+          <div class="user-input-box">
+            <label for="password">Password</label>
+            <input type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter Password">
+            
+          </div> <span id="password_error"></span>
+          <div class="user-input-box">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password"
+                    id="repassword"
+                    name="repassword"
+                    placeholder="Confirm Password">
+            
+          </div>
+        <span id="repassword_error"></span>
+          <div class="user-input-box">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter Phone Number">
+               
+          </div><span id="phone_error"></span>
+      <div class="user-input-box">
+            <label for="dateofbirth">Date of Birth</label>
+            <input type = "date"
+                    id="dob"
+                    name="dob"   required> 
+          </div>
+             <span id="doberror"></span>
+        <div class="user-input-box">
+            <label for="securityQuestion">Security Question</label>
+            <select class="userdata" name="securityQuestion" id="securityQuestion">
+                <option value="0"></option>
+                <option value="school">High School Name</option>
+                <option value="color">Favourite color</option>
+                <option value="number">lucky number</option>
+                <option value="pet">Pet name</option>
+              </select> 
+      </div>
+      <div class="user-input-box">
+            <label for="securityAnswer">Security Answer</label>
+            <input type="text"
+                    id="answer"
+                    name="answer"
+                    placeholder="enter your security answer">
+           
+
+          </div>
+          <span id="answer_error"></span>
+
+        </div>
+
+        <div class="gender-details-box">
+          <span class="gender-title">Gender</span>
+          <div class="gender-category">
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="other">
+            <label for="other">Other</label>
+          </div>
+        <div class="form-submit-btn" >
+          <input type="submit" value="Register" formaction="log.html">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

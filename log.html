@@ -1,0 +1,81 @@
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Login Form</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <link rel="stylesheet" href="logcss.css" />
+  </head>
+<script>
+function validation()
+{
+var email=document.getElementById("email").value;
+var password=document.getElementById("password").value;
+if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
+  {
+    alert("enter properly");
+    return false;
+  }
+
+if(password==""||password==null||password==undefined)
+{
+alert("enter field"); password.focus();
+return false;
+}
+
+if(password.length<6)
+{
+alert("password must have atleast 6");
+password.focus();
+return false;
+}
+
+return true;
+}
+</script>
+  <body background="C:\Users\Admin\Desktop\dbs hack\flight.jpg">
+    <div class="container">
+      <h1 class="form-title">Login</h1>
+      <form name="loginform" action="#" method="post" onsubmit="return validation()" id="form">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email" required> 
+          </div>
+         <span id="emailerror"</span>
+          <div class="user-input-box">
+            <label for="password">Password</label>
+            <input type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter Password" required> 
+          </div>
+            <span id="passworderror"></span>
+          </div>
+          
+          
+
+
+          <p style="color:white"><b> Don't have an Account <a href="reg.html" style="color: yellow">Register</a>
+          </b>
+      </p>
+      <br>
+      <p style="color:white"><b> Forgot Password <a href="forgotpwd.html" style="color: yellow">Click Here</a>
+          </b>
+      </p>
+          
+
+        
+
+        <div class="form-submit-btn">
+          <input type="submit"  name="submit" value="Login">
+        </div>
+           
+      </form>
+    </div>
+  </body>
+</html>
